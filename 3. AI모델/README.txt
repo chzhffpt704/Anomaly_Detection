@@ -1,1 +1,22 @@
-##�������� ������##1. conda ȯ�� ����$ conda env create -f environment.yml2. conda ȯ�� ����$ conda activate xgboost3-1. ���� ���� ����$ cd current$ python current_valid.py --path {current���������� ���丮 ��θ�-default=��current��}3-2. ���� ���� ����$ cd vibration$ python current_valid.py --path {current ���������� ���丮 ��θ�-default=��vibration��}
+1. 데이터 형태 확인
+2. Train, Validation 데이터 생성
+3. 분류 모델 생성
+-- xgboost같은 좋은 모델이 아니라서 느림
+-- 모델 성능은 충분히 잘 나옴
+-- 성능이 너무 잘 나왔기 때문에 재검증 시도
+3.1 성능 재검증 시도
+-- StratifiedKFold
+-- 특징 중요도
+-- 순열 중요도
+
+4. 3sigma를 기준으로 고장 분류
+-- 제대로 분류되지않는 몇개가 존재함
+
+5. LSTM AutoEncoder를 통해 5초뒤 예측
+-- 예시 데이터 3.7kW_L-EF-02를 기준으로 하였을 때 성능 확인
+
+
+-- 추후 할 것
+1. (5.)를 이용하여 다른 모델들도 검증하여 고장 기준 수립
+2. 고장 데이터 재현 or 정상 + 고장을 이어 정상이후 고장 발생하는 데이터 생성
+3. 데이터를 통해 고장을 확인함으로써 CBM(상태기반유지보수) 알고리즘 생성
